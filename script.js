@@ -19,3 +19,22 @@ for (const nav of headerNavs){
     $li.appendChild($a);
     $headerNavUl.appendChild($li);
 }
+
+
+$menuBtn = document.querySelector(".header__menu-btn");
+$headerNav = document.querySelector(".header__nav");
+
+$menuBtn.addEventListener("click", (e) => {
+    $menuBtn.classList.toggle("on");
+    $headerNav.classList.toggle("active");
+
+    e.stopPropagation();
+});
+
+document
+.querySelector("body")
+.addEventListener("click", () => {
+    $menuBtn.classList.remove("on");
+    $headerNav.classList.remove("active");  
+});
+
