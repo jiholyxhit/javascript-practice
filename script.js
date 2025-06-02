@@ -1,3 +1,4 @@
+
 // Add Navigation Bar (desktop ver.)
 const headerNavs = [
     { title: '프런트 강좌는', link: '#about' },
@@ -66,5 +67,39 @@ const aboutCards = [
       ]
     }
   ];
+
+const $aboutDiv = document.querySelector(".about");
+
+for(let i = 0; i < aboutCards.length; i++){
+    const card = aboutCards[i];
+
+    const $div = document.createElement("div");
+    $div.classList.add("about__card");
+
+    const $img = document.createElement("img");
+    $img.classList.add("about__icon");
+    $img.setAttribute("src", card.img);
+
+    const $h2 = document.createElement("h2");
+    $h2.classList.add("about__title");
+    $h2.classList.add('_' + (i + 1));
+    $h2.textContent = card.title;
+
+    const $p = document.createElement("p");
+    $p.classList.add("about__text");
+    
+    for (const desc of card.descs){
+        const $word = document.createElement("div");
+        $word.textContent = desc;
+        $p.appendChild($word);
+    }
+
+    $div.appendChild($img);
+    $div.appendChild($h2);
+    $div.appendChild($p);
+
+    $aboutDiv.appendChild($div);
+}
+
 
 
