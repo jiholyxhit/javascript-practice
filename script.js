@@ -117,3 +117,21 @@ for (let i = 0; i < $curriList.length; i++){
     });    
 }
 
+
+// Contact Inquiry section
+const $contactTabs = document.querySelectorAll("input[name=contact]");
+const $contactSlideCon = document.querySelector(".contact__slide-con");
+
+for (let i = 0; i < $contactTabs.length; i++){
+    const $tab = $contactTabs[i];
+    const marginLeft = [0, "-100vw"][i];
+
+    $tab.addEventListener("click", () => {
+        $contactSlideCon.style.marginLeft = marginLeft;
+    });
+}
+
+
+
+
+
