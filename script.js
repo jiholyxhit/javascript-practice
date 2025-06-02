@@ -102,4 +102,18 @@ for(let i = 0; i < aboutCards.length; i++){
 }
 
 
+// Curriculum MouseOver Animation
+$curriList = document.querySelectorAll(".curriculum__list > li");
+$currProgBar = document.querySelector(".curriculum__progress .bar");
+
+for (let i = 0; i < $curriList.length; i++){
+    const $li = $curriList[i];
+
+    $li.addEventListener("mouseenter", () => {
+        $currProgBar.style["width"] = (200 * i) + "px";
+    });
+    $li.addEventListener("mouseleave", () => {
+        $currProgBar.style["width"] = 0;
+    });    
+}
 
